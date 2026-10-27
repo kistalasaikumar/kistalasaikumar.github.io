@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kistala Sai Kumar | Java Backend Developer</title>
+<meta name="description" content="Portfolio of Kistala Sai Kumar, Java backend developer and AWS Certified Cloud Practitioner based in Hyderabad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F8FC; --surface:#FFFFFF; --ink:#1E2A44; --muted:#5A6A85; --line:#E1E8F2;
+  --blue:#4B7BEC; --blue-soft:#E3ECFF; --mint:#D5F1E6; --lav:#E9E5FF; --peach:#FFE8DA;
+  --head:'Bricolage Grotesque',system-ui,sans-serif; --body:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;background:rgba(245,248,252,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.nav b{font-family:var(--head);font-size:1.1rem}
+.nav nav{display:flex;gap:22px;font-size:.95rem}
+.nav nav a{color:var(--muted)}
+.nav nav a:hover{color:var(--ink);text-decoration:none}
+h1,h2,h3{font-family:var(--head);line-height:1.15;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,5.5vw,3.6rem)}
+h2{font-size:1.9rem;margin-bottom:28px}
+section{padding:72px 0}
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero p.lead{color:var(--muted);margin:20px 0 28px;max-width:52ch}
+.role{font-weight:600;color:var(--blue);margin-bottom:10px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.97rem;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue);text-decoration:none}
+.btn.ghost{color:var(--ink)}
+.btn.ghost:hover{background:var(--surface);text-decoration:none}
+/* layered architecture visual */
+.stack{display:flex;flex-direction:column;gap:10px}
+.layer{border-radius:16px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(30,42,68,.08)}
+.layer b{font-family:var(--head);font-size:1.05rem}
+.layer span{font-size:.85rem;color:var(--muted)}
+.l1{background:var(--blue-soft);margin-right:36px}
+.l2{background:var(--lav);margin-left:18px;margin-right:18px}
+.l3{background:var(--mint);margin-left:36px}
+.l4{background:var(--peach);margin-left:54px}
+.stack small{display:block;text-align:center;color:var(--muted);font-size:.85rem;margin-top:6px}
+.about p{max-width:68ch;color:var(--muted);font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card h3{font-size:1.1rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--blue-soft);color:#2F4FA8;padding:4px 12px;border-radius:999px;font-size:.88rem;font-weight:500}
+.card:nth-child(2n) .chip{background:var(--mint);color:#1F6A52}
+.card:nth-child(3n) .chip{background:var(--lav);color:#4B3FAE}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:32px;margin-bottom:20px}
+.project h3{font-size:1.35rem;margin-bottom:12px}
+.project ul{margin:18px 0 0 20px;color:var(--muted)}
+.project li{margin-bottom:8px}
+.project li::marker{color:var(--blue)}
+.tl{border-left:2px solid var(--line);padding-left:24px;margin-left:6px}
+.tl div{position:relative;margin-bottom:26px}
+.tl div::before{content:"";position:absolute;left:-31px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:3px solid var(--bg)}
+.tl p{color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.list{list-style:none;padding:0}
+.list li{padding:12px 0;border-bottom:1px solid var(--line)}
+.list li:last-child{border:0}
+.contact{background:var(--ink);color:#fff;border-radius:28px;padding:48px;text-align:center}
+.contact h2{margin-bottom:12px}
+.contact p{color:#C3CEE3;margin-bottom:24px}
+.contact .btn{border-color:#fff;color:#fff}
+.contact .btn.primary{background:#fff;color:var(--ink)}
+.contact .btn.primary:hover{background:var(--mint);border-color:var(--mint)}
+.contact .btn:hover{text-decoration:none}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:32px 0 48px}
+@media(max-width:820px){
+  .hero .wrap,.two{grid-template-columns:1fr}
+  .nav nav{gap:14px;font-size:.85rem}
+  .nav b{display:none}
+  .contact{padding:32px 20px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <b>Sai Kumar</b>
+  <nav aria-label="Main">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="role">Java Backend Developer | AWS Certified Cloud Practitioner</p>
+    <h1>Kistala Sai Kumar</h1>
+    <p class="lead">I build clean, testable REST services with Java 17 and Spring Boot, and I'm looking for a Java SE internship where I can work on scalable microservices.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <div class="stack" aria-label="Layered architecture: Controller, Service, Repository, MySQL">
+    <div class="layer l1"><b>Controller</b><span>REST endpoints</span></div>
+    <div class="layer l2"><b>Service</b><span>Business logic</span></div>
+    <div class="layer l3"><b>Repository</b><span>Spring Data JPA</span></div>
+    <div class="layer l4"><b>MySQL</b><span>Normalized schema</span></div>
+    <small>How I structure every backend I build</small>
+  </div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <h2>About me</h2>
+  <p>I'm an M.Sc. Computer Science graduate with a strong base in Core Java, object-oriented design, data structures, algorithms and design patterns. I like layered architecture and SOLID principles because they keep code easy to read, test and extend. I also have working knowledge of AWS (EC2, S3, Lambda), Docker and Git, and I'm keen to learn how large-scale distributed platforms serve millions of players worldwide.</p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>Languages</h3><div class="chips"><span class="chip">Java 17+</span><span class="chip">Core Java</span><span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript (basics)</span></div></div>
+    <div class="card"><h3>Frameworks and APIs</h3><div class="chips"><span class="chip">Spring Boot 3.x</span><span class="chip">Spring MVC</span><span class="chip">Spring Data JPA</span><span class="chip">Hibernate</span><span class="chip">REST APIs</span><span class="chip">Maven</span></div></div>
+    <div class="card"><h3>Databases</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">JDBC</span><span class="chip">Hibernate ORM</span></div></div>
+    <div class="card"><h3>Cloud and DevOps</h3><div class="chips"><span class="chip">AWS EC2</span><span class="chip">AWS S3</span><span class="chip">AWS Lambda</span><span class="chip">Docker (basics)</span><span class="chip">Git and GitHub</span><span class="chip">Postman</span></div></div>
+    <div class="card"><h3>CS fundamentals</h3><div class="chips"><span class="chip">OOP</span><span class="chip">Data Structures</span><span class="chip">Algorithms</span><span class="chip">Design Patterns</span><span class="chip">SOLID</span><span class="chip">Microservices</span><span class="chip">DBMS</span><span class="chip">Agile/Scrum</span></div></div>
+    <div class="card"><h3>AI and emerging tech</h3><div class="chips"><span class="chip">OpenAI API</span><span class="chip">LangChain4j (basics)</span><span class="chip">NLP</span><span class="chip">Prompt Engineering</span></div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <article class="project">
+    <h3>Employee Management System: REST API backend</h3>
+    <div class="chips"><span class="chip">Spring Boot</span><span class="chip">Spring Data JPA</span><span class="chip">MySQL</span><span class="chip">Hibernate</span><span class="chip">Maven</span><span class="chip">Postman</span></div>
+    <ul>
+      <li>Built a full CRUD backend for employee records with Spring Boot 3.x and Spring Data JPA, applying core Java, OOP and design-pattern principles.</li>
+      <li>Structured the service in a layered architecture (Controller, Service, Repository) following SOLID principles, so it stays modular and easy to extend into microservices.</li>
+      <li>Designed a normalized MySQL schema and used Hibernate ORM and JDBC for efficient data access.</li>
+      <li>Tested every endpoint with Postman, managed dependencies with Maven and versioned the code with Git and GitHub.</li>
+    </ul>
+    <p style="margin-top:18px"><a href="https://github.com/YOUR-USERNAME/YOUR-REPO">View code on GitHub</a></p>
+  </article>
+  <article class="project">
+    <h3>User Authentication Portal</h3>
+    <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">XAMPP</span></div>
+    <ul>
+      <li>Developed a secure login and signup app with server-side validation, password hashing and session management.</li>
+      <li>Connected an HTML/CSS frontend to a PHP and MySQL backend, applying DBMS concepts and SQL queries.</li>
+    </ul>
+  </article>
+</div></section>
+
+<section id="education"><div class="wrap two">
+  <div>
+    <h2>Education</h2>
+    <div class="tl">
+      <div><h3>M.Sc. Computer Science</h3><p>Bankatlal Badruka College for Information Technology, Hyderabad<br>2023 – 2025</p></div>
+      <div><h3>B.Sc. (MCCs)</h3><p>Government Degree College, Gawel<br>2020 – 2023</p></div>
+    </div>
+  </div>
+  <div>
+    <h2>Certifications</h2>
+    <ul class="list">
+      <li><b>AWS Certified Cloud Practitioner</b><br><span style="color:var(--muted)">Amazon Web Services</span></li>
+      <li><b>Advanced Java</b><br><span style="color:var(--muted)">Coursera</span></li>
+      <li><b>Power BI Workshop</b><br><span style="color:var(--muted)">Sansah Innovations Pvt. Ltd.</span></li>
+      <li><b>MS Excel Using AI</b></li>
+    </ul>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Leadership</h2>
+  <div class="grid">
+    <div class="card"><p style="color:var(--muted)">Led documentation, reporting and team coordination during academic programs and NSS camp field activities.</p></div>
+    <div class="card"><p style="color:var(--muted)">Coordinated the student helpdesk at college events and assisted faculty with scheduling, communication and workshops.</p></div>
+    <div class="card"><p style="color:var(--muted)">Earned an Appreciation Certificate for Event Organization from BBCIT.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <h2>Let's work together</h2>
+    <p>I'm open to Java SE internship opportunities in Hyderabad.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn primary" href="mailto:saikumar.kistala3004@gmail.com">Email me</a>
+      <a class="btn" href="tel:+919704725059">+91 97047 25059</a>
+      <a class="btn" href="https://github.com/YOUR-USERNAME">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN/">LinkedIn</a>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer>&copy; 2026 Kistala Sai Kumar &middot; Hyderabad, India</footer>
+</body>
+</html>
